@@ -1,44 +1,107 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Adoption Application</title>
+	 <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .multi-select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-	<!-- the entire body must be written by student -->
-	<label for="name">Name</label><br>
-	<input type="text" id="name"  name="name" placeholder="Name"><br>
-	<br>
-	<!-- the entire body must be written by student -->
-	<label for="phone">Phone Number</label><br>
-	<input type="type" id="phone"  name="name" placeholder="Phone Number"><br>
-	<br>
-	<!-- the entire body must be written by student -->
-	<label for="address">Address</label><br>
-	<input type="text" id="address"  name="name" placeholder="Address"><br>
-	<br>
-	<!-- the entire body must be written by student -->
-	<label for="checkbox">Have you ever lived with a Dog before?</label><br>
-	<input type="checkbox" id="checkbox"  name="name" value="Have you ever lived with a Dog before?"><br>
-	<br>
-	<!-- the entire body must be written by student -->
-	<label for="multiselect">Make this as a multi-select box with at least 3 options</label><br>
-	<select type="select" id="multiselect" >
-		<option id="dog1">Dog 1</option>
-		<option id="dog2">Dog 2</option>
-		<option id="dog3">Dog 3</option>
-	</select>
-	<br>
-	<!-- the entire body must be written by student -->
-	<label for="submit"></label><br>
-	<input type="submit" id="submit" value="Submit"><br>
-	<br>
-	
-    <script type="text/javascript" src="./script.js">
-</script>
+    <h1>Dog Adoption Application</h1>
 
+    <form action="submit_form.php" method="POST">
+        <!-- Name -->
+        <label for="name">Name</label><br>
+        <input type="text" id="name" name="name" placeholder="Name" required><br><br>
+
+        <!-- Phone Number -->
+        <label for="phone">Phone Number</label><br>
+        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required><br><br>
+
+        <!-- Address -->
+        <label for="address">Address</label><br>
+        <input type="text" id="address" name="address" placeholder="Address" required><br><br>
+
+        <!-- Have you ever lived with a Dog before? -->
+        <label for="checkbox">Have you ever lived with a Dog before?</label><br>
+        <input type="checkbox" id="checkbox" name="has_lived_with_dog"><br><br>
+
+        <!-- Preferred Breeds (Multi-select) -->
+        <label for="multiselect">Please select your preferred breeds:</label><br>
+        <select id="multiselect" name="preferred_breeds[]" multiple required>
+            <option value="dog1">Dog 1</option>
+            <option value="dog2">Dog 2</option>
+            <option value="dog3">Dog 3</option>
+        </select><br><br>
+
+        <!-- Submit Button -->
+        <input type="submit" id="submit" value="Submit"><br><br>
+    </form>
+
+    <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>
